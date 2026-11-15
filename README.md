@@ -1,10 +1,10 @@
 # Meta-Labeling Trade Filter
 
+[![CI](https://github.com/Avinash186200/meta-labeling-trade-filter/actions/workflows/ci.yml/badge.svg)](https://github.com/Avinash186200/meta-labeling-trade-filter/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 A second-stage model that sits on top of an existing trading strategy, scores every trade at entry, and skips the weakest ones. The base strategy decides *what* to trade. This model only decides *whether to take it*.
 
 I built this for a long-only trend strategy on a futures contract. The original trade log is proprietary, so it is not in this repo. Everything here runs on a **synthetic trade log that has exactly the same columns**, so you can clone the repo and reproduce every number below.
-
-[![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 ## At a glance
 
@@ -87,6 +87,16 @@ To serve a model, train a bundle with `metalabel.scoring.train_bundle`, save it,
 MODEL_BUNDLE=model.joblib API_KEYS=change-me uvicorn api.app:app
 ```
 
+## Original research code
+
+[`original/`](original/README.md) holds the code as I first wrote it for this work, sanitised and nothing else:
+client, company and person names replaced, credentials and local paths removed, data files and notebook outputs
+dropped, and internal deployment notes, client-facing decks and client findings memos left out. It is kept so
+the real work can be read alongside the maintained version. Some of it contains the issues
+described above; comparing the two shows each fix.
+
 ## License
 
 MIT
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [CHANGELOG](CHANGELOG.md).
