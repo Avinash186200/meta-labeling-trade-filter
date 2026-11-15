@@ -1,5 +1,5 @@
 """
-Data loader: turns Client's raw trade export (same column shape as the
+Data loader: turns the raw trade export (same column shape as the
 historical CSV they've already sent, one Entry row + one Exit row per
 Position_ID) into exactly the history format the model needs
 (predict_live.score_new_trade's `history_df` argument).

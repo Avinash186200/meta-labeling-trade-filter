@@ -110,7 +110,7 @@ scripts/         run_backtest.py · make_synthetic_data.py · train_bundle.py
 api/             app.py  (FastAPI: /health, /ingest, /score)
 tests/           pairing, T-1 boundary, fold purge, cutoff, noise test, scoring, API auth, scripts
 docs/            README.md (index) · methodology.md · walkthrough.md
-original/        the original research code, sanitised (read-only)
+original/        the original research code (read-only)
 ```
 
 ## Quick start
@@ -136,11 +136,9 @@ Then `GET /health` returns `{"status":"ok"}`, and `/ingest` and `/score` need th
 
 ## Original research code
 
-[`original/`](original/README.md) holds the code as I first wrote it for this work, sanitised and nothing else:
-client, company and person names replaced, credentials and local paths removed, data files and notebook outputs
-dropped, and internal deployment notes, client-facing decks and client findings memos left out. It is kept so
-the real work can be read alongside the maintained version. Some of it contains the issues
-described above; comparing the two shows each fix.
+[`original/`](original/README.md) holds the code as I first wrote it for this project. It is kept so you can
+read the first version alongside the maintained one; some of it contains the issues in the audit table above,
+and comparing the two shows each fix.
 
 ## License
 

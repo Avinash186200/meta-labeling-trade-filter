@@ -2,9 +2,9 @@
 GC Meta-model overlay -- live scoring API.
 
 Two endpoints:
-  POST /ingest  -- client pushes closed trades (their daily PnL/trade export)
+  POST /ingest  -- the caller pushes closed trades (their daily PnL/trade export)
                    to build up the rolling history the model needs.
-  POST /score   -- client pushes a new trade about to be entered
+  POST /score   -- the caller pushes a new trade about to be entered
                    (entry_price, take_profit, entry_dt) and gets back a
                    win-probability + take/skip decision.
 

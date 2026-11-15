@@ -14,7 +14,7 @@ Sharpe 0.51 -> 4.13, CAGR 15%->57%, max DD -83%->-4%, win rate 42%->72%.
 That's the strongest number found for GC and it survives both the T-1
 same-day-leakage audit and this hindsight-free threshold audit, so it's used
 as the production default (KEEP_FRAC below) rather than the more
-conservative 75%-keep cut shown in the client deck.
+conservative 75%-keep cut shown in the results deck.
 """
 import json
 import joblib
