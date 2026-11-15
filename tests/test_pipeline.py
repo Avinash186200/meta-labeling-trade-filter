@@ -108,3 +108,12 @@ def test_score_trade_roundtrip(trades):
     entry = trades["exit_dt"].max() + pd.Timedelta(days=2)
     r = score_trade(bundle, entry, 1500.0, 1515.0, trades)
     assert 0 <= r["win_probability"] <= 1 and isinstance(r["take_trade"], bool)
+
+
+def test_train_bundle_script(tmp_path):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    import train_bundle
+
+    out = tmp_path / "model.joblib"
+    assert train_bundle.main(["--out", str(out)]) == 0
+    assert out.exists()

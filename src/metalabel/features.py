@@ -61,7 +61,7 @@ def entry_features(entry_dt, entry_price: float, take_profit: float, prior: pd.D
     entry_dt = pd.Timestamp(entry_dt)
     f = history_features(prior)
     f["target_dist_pct"] = (take_profit - entry_price) / entry_price
-    f["entry_hour"], f["entry_dow"], f["entry_month"] = entry_dt.hour, entry_dt.dayofweek, entry_dt.month
+    f["entry_hour"], f["entry_dow"], f["entry_month"] = entry_dt.hour, entry_dt.day_of_week, entry_dt.month
     if "_last_exit_price" in f:
         last_px = f.pop("_last_exit_price")
         f["gap_pct"] = (entry_price - last_px) / last_px
